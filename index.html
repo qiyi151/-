@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        background-color: #003153;
+        color: #F8F5D6;
+        font-family: Arial, sans-serif;
+        padding: 30px;
+    }
+
+.intro {
+    width: 80%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #F8F5D6;
+    color: #003153;
+    border-radius: 12px;
+}
+
+.intro h1,
+.intro p {
+    color: #003153;
+}
+
+  .welcome {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.intro h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    line-height: 1.4;
+}
+
+
+.welcomebutton {
+    display: inline-flex;
+  
+    height: 44px;
+    box-sizing: border-box;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #003153;
+    color: #F8F5D6;
+    padding: 0 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+
+.button {
+    display: inline-flex;
+    width: 120px;
+    height: 44px;
+    box-sizing: border-box;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #003153;
+    color: #F8F5D6;
+    padding: 0 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+p {
+    text-align: center;
+}
+header {
+    background-color: #F8F5D6;
+    padding: 20px 30px;
+    border-radius: 12px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #003153;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #003153;
+    text-decoration: none;
+}
+
+
+.section-card {
+    width: 80%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #F8F5D6;
+    color: #003153;
+    border-radius: 12px;
+}
+
+.section-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.project-card {
+    background-color: #FBF9E8; 
+    padding: 20px;
+    border: 2px solid #003153;
+    border-radius: 8px;
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+
+.project-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-card {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+
+.cosplay-gallery {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 5px 20px;
+}
+
+.cosplay-gallery img {
+    width: 280px;
+    height: 350px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+
+.cosplay-item {
+    flex-shrink: 0;
+    width: 280px;
+    text-align: center;
+}
+
+.cosplay-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.cosplay-item p {
+    margin-top: 12px;
+    color: #003153;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+.section-description {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-item {
+    background-color: #003153;
+    color: #FBF9E8;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 14px;
+}
+
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 800px;
+    margin: 30px auto 0;
+}
+
+.skill-card {
+    background-color: #FBF9E8;
+    color: #003153;
+    border: 2px solid #FBF9E8;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateX(6px);
+}
+
+.skill-card summary {
+    background-color: #003153;
+    color: #FBF9E8;
+    padding: 20px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.skill-card summary::after {
+    content: "+";
+    font-size: 26px;
+    font-weight: normal;
+}
+
+.skill-card[open] summary::after {
+    content: "−";
+}
+
+.skill-detail {
+    padding: 20px 25px;
+    line-height: 1.8;
+}
+
+.skill-detail h3 {
+    margin-top: 0;
+}
+
+.skill-detail ul {
+    padding-left: 22px;
+}
+
+.skill-detail p:last-child {
+    margin-bottom: 0;
+}
+
+
+.skill-project-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.skill-project-table th,
+.skill-project-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #003153;
+}
+
+.skill-project-table th {
+    background-color: #003153;
+    color: #FBF9E8;
+}
+
+.skill-project-table td {
+    color: #003153;
+}
+
+
+.skill-project-table {
+    width: 90%;
+    margin: 25px auto;
+    border-collapse: collapse;
+    background-color: rgba(248, 245, 214, 0.25);
+    border: 2px solid #FBF9E8;
+}
+
+/* 表头和每个单元格 */
+.skill-project-table th,
+.skill-project-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border: 1px solid #FBF9E8;
+}
+
+/* 表头 */
+.skill-project-table th {
+    background-color: rgba(0, 49, 83, 0.75);
+    color: #FBF9E8;
+}
+
+/* 表格内容 */
+.skill-project-table td {
+    color: #003153;
+}
+
+/* 按钮 */
+.table-button {
+    display: inline-block;
+    background-color: #003153;
+    color: #FBF9E8;
+    padding: 8px 14px;
+    border: 1px solid #FBF9E8;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.table-button:hover {
+    transform: translateY(-3px);
+}
+
+
+
+
+/* Fixed side panels */
+.side-panel {
+    position: fixed;
+    top: 200px;
+    width: 300px;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    box-sizing: border-box;
+
+     background-color: #F8F5D6;
+    color: #003153;
+    border: 1px solid rgba(251, 249, 232, 0.28);
+    border-radius: 16px;
+    padding: 18px 14px;
+    z-index: 20;
+}
+
+.left-panel {
+    left: 40px;
+}
+
+.right-panel {
+    right: 40px;
+}
+
+/* Hide sidebars on smaller screens */
+@media (max-width: 1100px) {
+    .side-panel {
+        display: none;
+    }
+
+    main {
+        width: calc(100% - 32px);
+    }
+}
+
+
+/* 左侧导航整体 */
+.left-panel h3 {
+    margin-bottom: 28px;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+/* 每一个导航链接 */
+.side-link {
+    display: block;
+    color: #003153;
+    text-decoration: none;
+
+    padding: 13px 16px;
+    margin-bottom: 14px;
+
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+
+    border: 1px solid transparent;
+    transition: all 0.25s ease;
+}
+
+/* 鼠标放上去，或者当前所在区域 */
+.side-link:hover,
+.side-link.active {
+    background-color: #003153;
+    color: #FBF9E8;
+    border-color: #003153;
+}
+
+/* 鼠标放上去时稍微移动 */
+.side-link:hover {
+    transform: translateX(4px);
+}
+
+
+/* 右下角固定图片 */
+.corner-image {
+    position: fixed;
+    right: 50px;
+    bottom: 20px;
+
+    width: 280px;
+    height: auto;
+
+    z-index: 100;
+}
+
+/* 左下角固定图片 */
+.lcorner-image {
+    position: fixed;
+    left: 70px;
+    bottom: 20px;
+
+    width: 250px;
+    height: auto;
+
+    z-index: 100;
+}
+
+</style>
+<head>
+<meta charset="UTF-8">
+<title>哼~的小窝</title>
+</head>
+
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">哼~的小窝</div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#cosplay">About Me</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<aside class="side-panel left-panel">
+        <h2>ON THIS PAGE</h2>
+
+        <a href="#home" class="side-link">Home</a>
+        <br>
+        <a href="#projects" class="side-link">Projects</a>
+        <br>
+        <a href="#skills" class="side-link">Skills</a>
+         <br>
+        <a href="#cosplay" class="side-link">Cosplay</a>
+        <br>
+        <a href="#contact" class="side-link">Contact</a>
+    </aside>
+
+
+    <!-- ③ 右侧固定歌单 -->
+    <aside class="side-panel right-panel">
+     
+            <h3>  广告位招租</h3>
+           <p class="welcome">想唱ktv</p>
+            <p class="welcome">我是奶龙</p>
+             <p class="welcome">加我免费领内裤</p>
+
+    </aside>
+    
+    
+<img src="/MyPersonalSpace/image/nailong.gif"
+     alt="Corner Image"
+     class="corner-image">
+    
+<img src="/MyPersonalSpace/image/C6.gif"
+     alt="Corner Image"
+     class="lcorner-image">
+     
+<main class="intro" id="home">
+    <p class="welcome">WELCOME TO MY WEBSITE</p>
+   <h1>Ciallo～(∠・ω< )⌒★很高兴见到你~</h1>
+    <p>我是衡~你也可以叫我哼</p>
+    <p>一个普通的萌新程序员兼Coser兼美食up~</p>
+    <p>取这个名字的原因是：我想听到每一个喊我的人哈气"哼~"</p>
+    <p>喜欢月亮系~也喜欢白毛温柔大姐姐~</p>
+    <p>热爱玩抽象的土象妹子一枚~快来找我玩~</p>
+       <a href="#projects" class="welcomebutton">Explore my Projectsᓚᘏᗢ</a>
+       <a href="#skills" class="welcomebutton">Explore my Skillsᓚᘏᗢ</a>
+       <a href="#cosplay" class="welcomebutton">Explore my Cosplayᓚᘏᗢ</a>
+       <a href="#contact" class="welcomebutton">Contact meᓚᘏᗢ</a>
+</main>
+
+
+<section id="projects" class="section-card">
+    <h1>PROJECTS</h1>
+    <p>~瓦达西还在学习哇，跪求大佬们带飞我(づ￣ 3￣)づ</p>
+    <div class="project-card"id="trip-project">
+        <h3>Selangor旅行推荐</h3>
+        <p>这个项目会自动为你推荐景点，制作一天的行程表，并推算最优路线</p>
+      
+		<div class="project-buttons">
+   			<a href="https://github.com/qiyi151/SmartTrip" class="button">进入github</a>
+    		<a href="#projects" class="button">Python</a>
+		</div>       
+    </div>
+    <br>
+ 
+	<div class="project-card"id="tank-project">
+    	<h3>坦克大战</h3>
+    	<p>我正在做qwq</p>
+    	<div class="project-buttons">
+    		<a href="#projects" class="button">JAVA</a>
+		</div>       
+    </div>
+    <br>
+</section>
+
+
+<section id="skills" class="section-card">
+    <h1>MY SKILLS</h1>
+
+    <p class="section-description">
+        我还是一个萌新呜呜呜呜~要努力学习了！
+    </p>
+
+
+    <div class="skills-list">
+
+        <details class="skill-card">
+            <summary>Java</summary>
+            <div class="skill-detail">
+                <h3>Java Development</h3>
+                
+                <ul>
+                    <li>我还没想好这里怎么写，等我回去查查简历咋写</li>
+                     <li>感觉这边可以再加一个表格放对应做过的项目，指向project那里</li>
+                </ul>
+                
+                <table class="skill-project-table">
+					<tr>
+						<th>Project</th>
+						<th>More</th>
+					</tr>
+			
+					<tr>
+						<td>坦克大战</td>
+						<td>    <a href="#tank-project" class="table-button">View Project</a></td>
+					</tr>	
+				</table>
+                
+            </div>
+        </details>
+
+        <details class="skill-card">
+            <summary>Python</summary>
+            <div class="skill-detail">
+                <h3>Python Programming</h3>
+                <ul>
+                   <li>我还没想好这里怎么写，等我回去查查简历咋写</li> 
+                </ul>
+                
+                <table class="skill-project-table">
+					<tr>
+						<th>Project</th>
+						<th>More</th>
+					</tr>
+			
+					<tr>
+						<td>Selangor旅行推荐</td>
+						<td>    <a href="#trip-project" class="table-button">View Project</a></td>
+					</tr>	
+				</table>
+            </div>
+        </details>
+
+        <details class="skill-card">
+            <summary>HTML & CSS</summary>
+            <div class="skill-detail">
+                <h3>Web Development</h3>
+
+                <ul>
+                    <li>我还没想好这里怎么写，等我回去查查简历咋写</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="skill-card">
+            <summary>C++</summary>
+            <div class="skill-detail">
+                <h3>C++ Programming</h3>
+                <ul>
+                    <li>我还没想好这里怎么写，等我回去查查简历咋写</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="skill-card">
+            <summary>OpenGL</summary>
+            <div class="skill-detail">
+                <h3>Computer Graphics</h3>
+           
+                <ul>
+                    <li>我还没想好这里怎么写，等我回去查查简历咋写</li>
+                </ul>
+            </div>
+        </details>
+
+    </div>
+
+</section>
+
+
+<section id="cosplay" class="section-card">
+	<h1>COSPLAY</h1>
+    <p>只是一个普普通通的Coser，主包还在精进技能中</p>
+    <div class="cosplay-gallery">
+
+        <div class="cosplay-item">
+            <img src="/MyPersonalSpace/image/wandi.jpg" alt="万敌">
+            <p>万敌</p>
+        </div>
+
+        <div class="cosplay-item">
+            <img src="/MyPersonalSpace/image/hsm.png" alt="黑死牟">
+            <p>黑死牟</p>
+        </div>
+
+        <div class="cosplay-item">
+            <img src="/MyPersonalSpace/image/eml.jpg" alt="艾米莉亚">
+            <p>艾米莉亚</p>
+        </div>
+	  </div>
+	    <p>接下来的CosPlanning~</p>
+		<table class="skill-project-table">
+			<tr>
+			<th>角色</th>
+			<th>隶属作品</th>
+			<th>时间地点</th>
+			</tr>
+			
+			<tr>
+			<td>哥伦比娅（自设哥特风）</td>
+			<td>原神</td>
+			<td>11.7 llp</td>
+			</tr>
+			
+			<tr>
+			<td>哥伦比娅（原皮）</td>
+			<td>原神</td>
+			<td>12.19 cf</td>
+			</tr>
+			
+			<tr>
+			<td>绯英（原皮）</td>
+			<td>崩坏星穹铁道</td>
+			<td>12.20 cf</td>
+			</tr>
+			
+			<tr>
+			<td>特蕾西娅</td>
+			<td>RE0</td>
+			<td>预定4月</td>
+			</tr>
+			
+			<tr>
+			<td>本来我知道现在我又不知道了</td>
+			<td>诡秘之主</td>
+			<td>预定5月</td>
+			</tr>
+			
+
+	</table>
+</section>
+
+
+<section id="contact" class="section-card">
+    <h1>CONTACT ME</h1>
+
+    <p class="section-description">
+        快来找我玩吧~
+    </p>
+
+    <div class="contact-links">
+        <a href="https://github.com/qiyi151"
+           class="button" target="_blank" rel="noopener noreferrer">
+            GitHub
+        </a>
+
+        
+        <a href="https://www.instagram.com/suguruuuuuuuj/"
+   class="button"
+   target="_blank"
+   rel="noopener noreferrer">
+    Instagram
+</a>
+    
+    </div>
+    
+    
+
+
+    <p class="copyright">
+        © 2026 哼~的小窝
+    </p>
+</section>
+
+
+
+<script>
+const sections = document.querySelectorAll(
+    "#home, #projects, #cosplay, #skills, #contact"
+);
+
+const sideLinks = document.querySelectorAll(".side-link");
+
+function updateActiveLink() {
+    let currentSection = "home";
+
+    sections.forEach(function (section) {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop <= 200) {
+            currentSection = section.id;
+        }
+    });
+
+    sideLinks.forEach(function (link) {
+        if (link.getAttribute("href") === "#" + currentSection) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", updateActiveLink);
+window.addEventListener("load", updateActiveLink);
+</script>
+</body>
+</html>
