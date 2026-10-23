@@ -449,11 +449,13 @@ nav {
 /* 右下角固定图片 */
 .corner-image {
     position: fixed;
-    right: 50px;
+    right: 30px;
     bottom: 20px;
 
-    width: 280px;
+    width: clamp(100px, 18vw, 280px);
+    max-height: 35vh;
     height: auto;
+    object-fit: contain;
 
     z-index: 100;
 }
@@ -461,13 +463,38 @@ nav {
 /* 左下角固定图片 */
 .lcorner-image {
     position: fixed;
-    left: 70px;
+    left: 30px;
     bottom: 20px;
 
-    width: 250px;
+    width: clamp(100px, 16vw, 250px);
+    max-height: 35vh;
     height: auto;
+    object-fit: contain;
 
     z-index: 100;
+}
+
+/* 平板：缩小图片并靠近屏幕两侧 */
+@media (max-width: 1100px) {
+    .corner-image {
+        width: 150px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .lcorner-image {
+        width: 140px;
+        left: 15px;
+        bottom: 15px;
+    }
+}
+
+/* 手机：隐藏图片，避免遮挡内容 */
+@media (max-width: 600px) {
+    .corner-image,
+    .lcorner-image {
+        display: none;
+    }
 }
 
 </style>
